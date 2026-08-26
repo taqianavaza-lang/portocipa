@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nama Studio Anda - Professional Makeup Artist & Henna Art</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        :root {
+            --bg-cream: #FDFBF7;
+            --dusty-pink: #E8C5C8;
+            --dusty-pink-light: #F4E3E5;
+            --warm-choco: #4A3525;
+            --rose-brown: #8C5A5C;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--warm-choco);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Container & Layout */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            overflow-x: hidden;
+        }
+
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(74, 53, 37, 0.1);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--rose-brown);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #7a4d4f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(140, 90, 92, 0.3);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        /* Header / Profile */
+        .header {
+            text-align: center;
+            padding: 50px 0 30px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--white);
+            box-shadow: 0 8px 20px rgba(74, 53, 37, 0.15);
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 25px;
+        }
+
+        /* Pricing Cards */
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(74, 53, 37, 0.05);
+            position: relative;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(232, 197, 200, 0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--rose-brown);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(140, 90, 92, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: var(--warm-choco);
+            margin-bottom: 10px;
+        }
+
+        .card-price {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--rose-brown);
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .card-features {
+            list-style: none;
+        }
+
+        .card-features li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .card-features li i {
+            color: var(--rose-brown);
+            margin-top: 4px;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .bonus {
+            background: var(--dusty-pink-light);
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .bonus i {
+            color: var(--rose-brown);
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: var(--dusty-pink-light);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .info-box h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+        }
+
+        .info-box li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-box li span {
+            text-align: justify;
+            width: 100%;
+        }
+
+        .info-box li i {
+            margin-top: 3px;
+            margin-right: 8px;
+            color: var(--rose-brown);
+        }
+
+        /* Services List */
+        .services-list {
+            margin-bottom: 25px;
+        }
+
+        .services-list h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .services-list h3 i {
+            margin-right: 10px;
+            color: var(--dusty-pink);
+        }
+
+        .services-list ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .services-list li {
+            position: relative;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .services-list li::before {
+            content: '•';
+            color: var(--rose-brown);
+            position: absolute;
+            left: -15px;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* Gallery */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--dusty-pink);
+            color: var(--warm-choco);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--dusty-pink);
+            color: var(--warm-choco);
+            font-weight: 500;
+        }
+
+        .swiper {
+            width: 100%;
+            padding-bottom: 40px;
+            display: none;
+        }
+
+        .swiper.active-gallery {
+            display: block;
+        }
+
+        .swiper-slide {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(74, 53, 37, 0.1);
+            aspect-ratio: 1 / 1;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--rose-brown);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(74, 53, 37, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--dusty-pink-light);
+            font-size: 2rem;
+            opacity: 0.5;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-text {
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--rose-brown);
+        }
+
+        /* Review Form */
+        .review-form-container {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(74, 53, 37, 0.05);
+            border: 1px solid rgba(232, 197, 200, 0.3);
+        }
+
+        .review-form-container input,
+        .review-form-container textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: var(--warm-choco);
+        }
+
+        .review-form-container input:focus,
+        .review-form-container textarea:focus {
+            outline: none;
+            border-color: var(--rose-brown);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0 100px;
+            /* Extra padding for floating button */
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--rose-brown);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .social-links p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--warm-choco);
+        }
+
+        .ig-buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .ig-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: var(--dusty-pink-light);
+            color: var(--rose-brown);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .ig-btn i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        .ig-btn:hover {
+            background: var(--rose-brown);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(140, 90, 92, 0.2);
+        }
+
+        /* Floating WA */
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+            background-color: #1ebe57;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header animate-in">
+            <img src="assets/beauty_studio_logo_1787554738959.jpg" alt="Logo Studio" class="profile-img">
+            <h1>Nama Studio Anda</h1>
+            <p>Professional Makeup Artist & Henna Art</p>
+            <a href="https://wa.me/6282170748175?text=Halo%20Kak,%20saya%20lihat%20dari%20website.%20Mau%20tanya%20pricelist%20%26%20ketersediaan%20tanggal%20untuk%20acara%20[Wisuda%20/%20Wedding%20/%20Lainnya]%20pada%20tanggal%20..."
+                class="btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Konsultasi & Booking via WhatsApp
+            </a>
+        </header>
+
+        <!-- Combo Wedding -->
+        <section class="animate-in" style="animation-delay: 0.2s;">
+            <h2 class="section-title">Paket Combo Wedding</h2>
+
+            <div class="card">
+                <div class="badge">Paling Hemat</div>
+                <h3 class="card-title">Combo Standard</h3>
+                <div class="card-price">Rp 1.000.000</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check-circle"></i> 1x Makeup Pengantin</li>
+                    <li><i class="fas fa-check-circle"></i> 1x Henna Pengantin</li>
+                </ul>
+                <div class="bonus">
+                    <i class="fas fa-gift"></i> BONUS SPESIAL: FREE Makeup Ibu Pengantin (1 Orang)
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="badge">Best Seller</div>
+                <h3 class="card-title">Combo Premium (Akad & Resepsi)</h3>
+                <div class="card-price">Rp 1.800.000</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check-circle"></i> 2x Makeup Pengantin</li>
+                    <li><i class="fas fa-check-circle"></i> 2x Henna Pengantin</li>
+                </ul>
+                <div class="bonus">
+                    <i class="fas fa-gift"></i> BONUS SPESIAL: FREE Makeup Ibu Pengantin (1 Orang)
+                </div>
+            </div>
+        </section>
+
+        <!-- Henna Wedding -->
+        <section>
+            <h2 class="section-title">Henna Wedding Package</h2>
+
+            <div class="card">
+                <h3 class="card-title">Paket A (Akad & Resepsi)</h3>
+                <div class="card-price">Rp 700.000</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check-circle"></i> 2x Pasang Henna (Pilihan warna: Maroon / White / Nude)</li>
+                    <li><i class="fas fa-check-circle"></i> FREE: Kuku Palsu + Hiasan Glitter/Gems</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Paket B (Henna Wedding Maroon)</h3>
+                <div class="card-price">Rp 400.000</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check-circle"></i> 1x Pasang Henna Maroon</li>
+                    <li><i class="fas fa-check-circle"></i> FREE: Kuku Palsu + Hiasan Glitter/Gems</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Paket C (Henna Wedding White Akad)</h3>
+                <div class="card-price">Rp 400.000</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check-circle"></i> 1x Pasang Henna White khusus Akad</li>
+                    <li><i class="fas fa-check-circle"></i> FREE: Kuku Palsu + Hiasan Glitter/Gems</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4><i class="fas fa-info-circle"></i> Syarat & Ketentuan Henna</h4>
+                <ul>
+                    <li><i class="far fa-clock"></i> <span><strong>Waktu Pemasangan:</strong> Fleksibel, disesuaikan
+                            berdasarkan kesepakatan antara Henna Artist dan Pengantin (Wajib konfirmasi jadwal terlebih
+                            dahulu).</span></li>
+                    <li><i class="fas fa-map-marker-alt"></i> <span><strong>Area Layanan:</strong> Harga berlaku untuk
+                            area
+                            Bayang – Painan (Pesisir Selatan). Luar area dikenakan biaya transportasi tambahan.</span>
+                    </li>
+                    <li><i class="fas fa-hand-sparkles"></i> <span><strong>Layanan Henna Fun:</strong> Charge Rp 30.000
+                            /
+                            tangan untuk keluarga atau tamu.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Layanan Eceran -->
+        <section>
+            <h2 class="section-title">Layanan Lainnya</h2>
+
+            <div class="card">
+                <div class="services-list">
+                    <h3><i class="fas fa-magic"></i> Makeup Services</h3>
+                    <ul>
+                        <li>Makeup Pengantin (Bridal)</li>
+                        <li>Makeup Keluarga Pengantin</li>
+                        <li>Makeup Wisuda & Perpisahan Sekolah</li>
+                        <li>Touch-Up / Ganti Look (sesuai kesepakatan)</li>
+                    </ul>
+                </div>
+
+                <div class="services-list" style="margin-bottom: 0;">
+                    <h3><i class="fas fa-paint-brush"></i> Henna Art</h3>
+                    <ul>
+                        <li>Henna wedding/Resepsi</li>
+                        <li>Henna Fun / Henna Simple untuk Acara & Tamu</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section>
+            <h2 class="section-title">Galeri Portfolio</h2>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="makeup">Makeup</button>
+                <button class="filter-btn" data-filter="henna">Henna Art</button>
+            </div>
+
+            <!-- Makeup Slider -->
+            <div class="swiper active-gallery" id="makeup-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/makeup 1.jpeg" alt="Makeup 1" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/make up 2.jpeg" alt="Makeup 2" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/makeup 3.jpeg" alt="Makeup 3" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/makeup 4.jpeg" alt="Makeup 4" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/makeup 5.jpeg" alt="Makeup 5" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/makeup 6.jpeg" alt="Makeup 6" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/makeup 7.jpeg" alt="Makeup 7" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/makeup 8.jpeg" alt="Makeup 8" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/makeup 9.jpeg" alt="Makeup 9" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/makeup 10.jpeg" alt="Makeup 10" loading="lazy"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- Henna Slider -->
+            <div class="swiper" id="henna-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/henna 1.jpeg" alt="Henna 1" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/henna 2.jpeg" alt="Henna 2" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/henna 3.jpeg" alt="Henna 3" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/henna 4.jpeg" alt="Henna 4" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/henna 5.jpeg" alt="Henna 5" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/henna 6.jpeg" alt="Henna 6" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/henna 7.jpeg" alt="Henna 7" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/henna 8.jpeg" alt="Henna 8" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/henna 9.jpeg" alt="Henna 9" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/henna 10.jpeg" alt="Henna 10" loading="lazy"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section>
+            <h2 class="section-title">Testimoni Klien</h2>
+
+            <div id="testimonial-list">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Suka banget sama hasil makeupnya! Flawless dan tahan lama seharian.
+                        Henna-nya juga detail banget dan cantik."</p>
+                    <p class="testimonial-author">- Kak Nisa, Painan</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Pelayanannya ramah banget, Kakaknya sabar melukis henna yang
+                        request-nya
+                        ribet. Hasilnya memuaskan!"</p>
+                    <p class="testimonial-author">- Kak Putri, Bayang</p>
+                </div>
+            </div>
+
+            <!-- Form Tambah Testimoni -->
+            <div class="review-form-container">
+                <h3 style="text-align: center; margin-bottom: 15px; font-size: 1.2rem;">Bagikan Pengalaman Anda</h3>
+                <form id="review-form">
+                    <input type="text" id="reviewer-name" placeholder="Nama Anda" required>
+                    <textarea id="reviewer-text" rows="3" placeholder="Tulis ulasan Anda di sini..."
+                        required></textarea>
+                    <button type="submit" class="btn" style="width: 100%;"><i class="fas fa-paper-plane"></i> Kirim
+                        Ulasan</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p><i class="fas fa-map-marker-alt" style="color: var(--rose-brown); margin-right: 5px;"></i> Bayang -
+                Painan, Pesisir Selatan</p>
+            <div class="social-links">
+                <p>Follow Instagram Kami:</p>
+                <div class="ig-buttons-container">
+                    <a href="https://instagram.com/makeupbyassyfa" target="_blank" class="ig-btn"
+                        aria-label="Instagram Makeup">
+                        <i class="fab fa-instagram"></i> @makeupbyassyfa
+                    </a>
+                    <a href="https://instagram.com/assyfa_henna" target="_blank" class="ig-btn"
+                        aria-label="Instagram Henna Art">
+                        <i class="fab fa-instagram"></i> @assyfa_henna
+                    </a>
+                </div>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 enavea's studio. All rights
+                reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Floating WA -->
+    <a href="https://wa.me/6282170748175?text=Halo%20Kak,%20saya%20lihat%20dari%20website.%20Mau%20tanya%20pricelist%20%26%20ketersediaan%20tanggal%20untuk%20acara%20[Wisuda%20/%20Wedding%20/%20Lainnya]%20pada%20tanggal%20..."
+        class="floating-wa" target="_blank" aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Swipers
+            const swiperOptions = {
+                slidesPerView: 2,
+                spaceBetween: 15,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    }
+                }
+            };
+
+            new Swiper('#makeup-slider', swiperOptions);
+            new Swiper('#henna-slider', swiperOptions);
+
+            // Gallery Filter Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    if (filterValue === 'makeup') {
+                        document.getElementById('makeup-slider').classList.add('active-gallery');
+                        document.getElementById('henna-slider').classList.remove('active-gallery');
+                    } else {
+                        document.getElementById('makeup-slider').classList.remove('active-gallery');
+                        document.getElementById('henna-slider').classList.add('active-gallery');
+                    }
+                });
+            });
+
+            // Review Form Logic
+            const reviewForm = document.getElementById('review-form');
+            const testimonialList = document.getElementById('testimonial-list');
+
+            const savedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+
+            function createReviewHTML(name, text) {
+                return `
+                <div class="testimonial-card animate-in">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"${text}"</p>
+                    <p class="testimonial-author">- Kak ${name}</p>
+                </div>`;
+            }
+
+            savedReviews.forEach(review => {
+                testimonialList.insertAdjacentHTML('beforeend', createReviewHTML(review.name, review.text));
+            });
+
+            if (reviewForm) {
+                reviewForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('reviewer-name').value;
+                    const text = document.getElementById('reviewer-text').value;
+
+                    // Tambahkan langsung ke web (muncul paling atas)
+                    testimonialList.insertAdjacentHTML('afterbegin', createReviewHTML(name, text));
+
+                    // Simpan di memori browser
+                    savedReviews.unshift({ name, text });
+                    localStorage.setItem('userReviews', JSON.stringify(savedReviews));
+
+                    alert("Terima kasih! Ulasan Anda telah berhasil ditambahkan.");
+                    reviewForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
